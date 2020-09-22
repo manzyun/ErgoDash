@@ -1,0 +1,40 @@
+#+TITLE: README about this directory files
+#+AUTHOR: manzyun <manzyun@gmail.com>
+
+* Case
+** Editor
+Inkscape
+
+
+** Preview
+#+caption: Laphis
+#+ATTR_HTML: :width 28% :height 28% :alt Exported Inkscape
+[[file:preview_shot/ErgoDash_A4_laphis.png][Case: Laphis]]
+
+#+caption: Laphis prototype
+#+ATTR_HTML: :width 28% :height 28% :alt Exported Inkscape
+[[file:preview_shot/ErgoDash_A4_proto.png][Case: Laphis prototype]]
+
+#+caption: Beryl
+#+ATTL_HTML: :width 28% :height 28% :alt Exported Inkscape
+[[file:preview_shot/ErgoDash_A4_beryl.png][Case: Beryl]]
+
+
+* Keycaps
+** Editor
+[[http://www.keyboard-layout-editor.com/][Keyboard Layout Editor]]
+
+
+** Preview
+#+caption: Laphis
+[[file:preview_shot/ergodash-for-laphis-thumb.png][Keycap Laphis]]
+
+#+caption: Laphis prototype
+[[file:preview_shot/ergodash-for-proto-thumb.png][Keycap Laphis prototype]]
+
+#+caption: Beryl
+[[file:preview_shot/ergodash-for-beryl-thumb.png][Keycap Beryl]]
+
+
+* Special Thanks
+The original work of the character I used to design this case is called "[[http://www.nextframe.jp/flash/seventhsky_refine/seventhsky_refine.html][Seventh Sky]]" by [[http://www.nextframe.jp/][TANAKA U]].

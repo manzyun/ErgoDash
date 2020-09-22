@@ -1,0 +1,9 @@
+#+TITLE: Dvorak and ISO-JIS Keymap
+#+AUTHOR: manzyun <manzyun@gmail.com>
+
+* Keymap Edit
+[[https://config.qmk.fm/][QMK Configurator]]
+
+Referenced [[https://config.qmk.fm/#/ergodash/rev1/LAYOUT_3key_2us][ergodash/rev/LAYOUT_3key_2us]]
+
+You can load =./ergodash_dvorak_and_iso_jis.json= on QMK Configurator.
