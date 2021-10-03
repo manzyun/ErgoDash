@@ -1,6 +1,19 @@
+# Just This Repository Notice
+
+Yes. This repository isn't main line.
+
+# Fork Summary
+
+- Mixed Dvorak and JIS keyboard layout config.
+- Fan made case data. Format only `*.svg` and made with Inkscape on Ubuntu.
+  - "SeventhSky" is very good game; It made by "TANAKA U" with **Flash** .
+  - Many and nested clones... But, It is edited to be pleasant to the touch.
+
+------
+
 # Notice
 
-2019/5/5にファームウェアをアップデートしました。  
+2019/5/5 にファームウェアをアップデートしました。  
 それ以前にハードウェアを作製されていた方はアップデートの必要はありませんが、  
 アップデートした方は[ビルドガイドの最終項](https://github.com/omkbd/ErgoDash/blob/master/Doc/build.md#12-firmware%E3%81%AE%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%81%BF)を参照してください。
 
