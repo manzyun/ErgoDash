@@ -37,4 +37,4 @@ Inkscape
 
 
 * Special Thanks
-The original work of the character I used to design this case is called "[[http://www.nextframe.jp/flash/seventhsky_refine/seventhsky_refine.html][Seventh Sky]]" by [[http://www.nextframe.jp/][TANAKA U]].
+Original characters design "[[http://www.nextframe.jp/flash/seventhsky_refine/seventhsky_refine.html][Seventh Sky]]" by [[http://www.nextframe.jp/][TANAKA U]].
