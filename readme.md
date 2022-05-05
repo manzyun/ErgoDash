@@ -8,6 +8,16 @@ Yes. This repository isn't main line.
 - Fan made case data. Format only `*.svg` and made with Inkscape on Ubuntu.
   - "SeventhSky" is very good game; It made by "TANAKA U" with **Flash** .
   - Many and nested clones... But, It is edited to be pleasant to the touch.
+  
+# Just For Me Notice
+
+Create case on fabric space about [SHARE Garage](https://sharegarage.jp)'s [Rayjet](https://www.rayjetlaser.com)CNC:
+
+Order send from "Adobe Illustrator CS6".
+Checking under bullets on SVG file:
+
+- Strokes bold of cut order: 0.001mm
+- Can use "clipping" for curving
 
 ------
 
