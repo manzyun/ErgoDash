@@ -1,5 +1,7 @@
 /* Reference Document;
  * https://qiita.com/zk_phi/items/ab99315ebaef66e84aa0
+ *
+ * and Offitial User Manual.
  */
 
 /* Code Summary
@@ -13,7 +15,7 @@
 $fs = 0.1;
 $fa = 0.25; // for bigger circle depth.
 
-/* Keycap Variables (Any mm. But, `ANGLE` is rad) */
+/* Keycap Variables (Any mm. But, `ANGLE` is degree) */
 BOTTOM = 18;
 TOP = 14;
 HEIGHT = 8;
@@ -21,26 +23,46 @@ ANGLE = 5;
 DISH_DEPTH = 1;
 
 /* Generate Keycaps */
-for(x = [0:6], y = [0:4])
+for(y = [0:4], x = [0:6])
     translate([19 * x, 18 * y, 0])
     if(y == 2){
         if (x == 4){
-            one_keycap(BOTTOM, TOP, HEIGHT, ANGLE, true, DISH_DEPTH, true);
+            one_keycap(BOTTOM, TOP, HEIGHT, ANGLE, true, DISH_DEPTH, true, false);
         } else {
-            one_keycap(BOTTOM, TOP, HEIGHT, ANGLE, true, DISH_DEPTH, false);
+            one_keycap(BOTTOM, TOP, HEIGHT, ANGLE, true, DISH_DEPTH, false, false);
         }
+    } else if (y == 2 && x == 6) {
+//        translate([x, y + 18, 0]) // Well, one keycap is resize from center.
+        one_keycap(BOTTOM, TOP, HEIGHT, ANGLE, false, DISH_DEPTH, false, true); 
+    } else if (y == 4 && x == 4) {
+        rotate([0, 0, 90]) // So, one keycap is resize from center and rotated.
+        one_keycap(BOTTOM, TOP, HEIGHT, ANGLE, false, DISH_DEPTH, false, true);
+    } else if (y > 2 && x == 6 || y == 4 && x > 4) {
+        // pass() : That's Python style...
     } else {
-        one_keycap(BOTTOM, TOP, HEIGHT, ANGLE, false, DISH_DEPTH, false);
+        one_keycap(BOTTOM, TOP, HEIGHT, ANGLE, false, DISH_DEPTH, false, false);
     }
 
 
 /* One Keycap */
-module one_keycap(bottom_size, top_size, height, angle, is_dish_sphere, dish_depth, is_ancher_marked){
+module one_keycap(bottom_size, top_size, height, angle, is_dish_sphere, dish_depth, is_ancher_marked, is_2x1){
     intersection(){
-        stem(5.5, 15);
-        keycap_outside(bottom_size, top_size, height, angle, is_dish_sphere, dish_depth);
+        if (is_2x1) {
+            for(range = [0:2])
+                translate([0, 11.5 * range, 0]) // Maybe stems between 11.5mm of jack's center.
+                stem(5.5, 15);
+            translate([0, -11.5, 0]) scale([1, 2, 1]) keycap_outside(bottom_size, top_size, height, angle, is_dish_sphere, dish_depth); // Because, stems ajast to 2x1 keycap.
+        } else {
+            stem(5.5, 15);    
+            keycap_outside(bottom_size, top_size, height, angle, is_dish_sphere, dish_depth);
+        }
     }
-    keycap_shape(bottom_size, top_size, height, angle, is_dish_sphere, dish_depth, is_ancher_marked);
+    if (is_2x1) {
+        scale([1, 2, 1])
+        keycap_shape(bottom_size, top_size, height, angle, is_dish_sphere, dish_depth, is_ancher_marked);
+    } else {
+        keycap_shape(bottom_size, top_size, height, angle, is_dish_sphere, dish_depth, is_ancher_marked);
+    }
 }
 
 
