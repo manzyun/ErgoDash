@@ -13,27 +13,35 @@
 $fs = 0.1;
 $fa = 0.25; // for bigger circle depth.
 
-/* Summary Sequent */
-module one_keycap(is_dish_sphere, is_mark_index_line){
-    intersection(){
-        stem(5.5, 15);
-        keycap_outside(18, 14, 8, 5, is_dish_sphere, 1, is_mark_index_line);
-    }
-    keycap_shape();
-}
+/* Keycap Variables (Any mm. But, `ANGLE` is rad) */
+BOTTOM = 18;
+TOP = 14;
+HEIGHT = 8;
+ANGLE = 5;
+DISH_DEPTH = 1;
 
 /* Generate Keycaps */
 for(x = [0:6], y = [0:4])
     translate([19 * x, 18 * y, 0])
     if(y == 2){
         if (x == 4){
-            one_keycap(true, true);
+            one_keycap(BOTTOM, TOP, HEIGHT, ANGLE, true, DISH_DEPTH, true);
         } else {
-            one_keycap(true, false);
+            one_keycap(BOTTOM, TOP, HEIGHT, ANGLE, true, DISH_DEPTH, false);
         }
     } else {
-        one_keycap(false, false);
+        one_keycap(BOTTOM, TOP, HEIGHT, ANGLE, false, DISH_DEPTH, false);
     }
+
+
+/* One Keycap */
+module one_keycap(bottom_size, top_size, height, angle, is_dish_sphere, dish_depth, is_ancher_marked){
+    intersection(){
+        stem(5.5, 15);
+        keycap_outside(bottom_size, top_size, height, angle, is_dish_sphere, dish_depth);
+    }
+    keycap_shape(bottom_size, top_size, height, angle, is_dish_sphere, dish_depth, is_ancher_marked);
+}
 
 
 /* Details modules and function */
@@ -73,7 +81,7 @@ function dish_r(w, d) = (w * w + 4 * d * d) / (8 * d);
  * ancher_marked: for index finger neutral position.
  * 
  */
-module keycap_outside (bottom_size, top_size, height, angle, is_dish_sphere, dish_depth, ancher_marked) {
+module keycap_outside (bottom_size, top_size, height, angle, is_dish_sphere, dish_depth) {
     difference(){
         hull () {
             translate([0, 0, height])
@@ -83,7 +91,7 @@ module keycap_outside (bottom_size, top_size, height, angle, is_dish_sphere, dis
         }
         translate([0, 0, height])
         rotate([- angle, 0, 0])
-        if(true){ // Sphere top.
+        if(is_dish_sphere){ // Sphere top.
             translate([0, 0, dish_r(top_size * sqrt(2), dish_depth) - dish_depth])
             rotate([90, 0, 0])
             sphere(dish_r(top_size * sqrt(2), dish_depth));
@@ -96,9 +104,14 @@ module keycap_outside (bottom_size, top_size, height, angle, is_dish_sphere, dis
 }
 
 
-module keycap_shape () {
+module keycap_shape (bottom_size, top_size, height, angle, is_dish_sphere, dish_depth, is_ancher_marked) {
     difference(){
-        keycap_outside(18, 14, 8, 5);
-        keycap_outside(16, 12, 6, 5); // difference shape
+        keycap_outside(bottom_size, top_size, height, angle, is_dish_sphere, dish_depth);
+        keycap_outside(bottom_size - 2, top_size - 2, height - 2, angle, is_dish_sphere, dish_depth); // difference shape
+    }
+    if (is_ancher_marked) {
+        translate([0, 5, height - 1])
+        rotate([0, 90, 0])
+        cylinder(r = 1, h = 5, center = true);
     }
 }
