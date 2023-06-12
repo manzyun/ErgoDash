@@ -7,3 +7,19 @@
 Referenced [[https://config.qmk.fm/#/ergodash/rev1/LAYOUT_3key_2us][ergodash/rev/LAYOUT_3key_2us]]
 
 You can load =./ergodash_dvorak_and_iso_jis.json= on QMK Configurator.
+
+* [NOTE] How to use "QMK CLI"
+PIP packages was strict about install on Ubuntu 22.04 a.k.a "Jammy Jellyfish" and later.
+I'm suggest, "Using =python3 -m venv= and =pip= in that virtual environment".
+
+Here directory include =qmktool= whose =requirements.txt= and =bin/activate.*= . for example;
+
+#+begin_src
+source ./qmktool/bin/activate.sh
+pip install -r ./qmktool/requirements.txt
+qmk setup
+qmk flash ./dvorak_and_jis_mixed_rev12.json -- # After, standby frashing...
+
+deactivate
+#+end_src
+
