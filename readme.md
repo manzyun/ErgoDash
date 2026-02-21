@@ -2,13 +2,21 @@
 
 Yes. This repository isn't main line.
 
+This repository using Large File System a.k.a Git LFS.
+
 # Fork Summary
 
 - Mixed Dvorak and JIS keyboard layout config.
 - Fan made case data. Format only `*.svg` and made with Inkscape on Ubuntu.
   - "SeventhSky" is very good game; It made by "TANAKA U" with **Flash** .
   - Many and nested clones... But, It is edited to be pleasant to the touch.
-  
+
+- If you want Numeric pad's Enter keycap, maybe useful [this 3D model](https://www.thingiverse.com/thing:7300157) .
+
+## External Resource
+
+- [Just for My ErgoDash - Thingiverse](https://www.thingiverse.com/manzyun/collections/43889478/things)
+
 # Just For Me Notice
 
 Create case on fabric space about [SHARE Garage](https://sharegarage.jp)'s [Rayjet](https://www.rayjetlaser.com)CNC:
