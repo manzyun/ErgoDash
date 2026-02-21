@@ -2,8 +2,6 @@
 
 Yes. This repository isn't main line.
 
-This repository using Large File System a.k.a Git LFS.
-
 # Fork Summary
 
 - Mixed Dvorak and JIS keyboard layout config.
